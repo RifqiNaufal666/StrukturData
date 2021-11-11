@@ -1,0 +1,54 @@
+class array{
+    int[] data;
+    int top = -1;
+    int size;
+    
+    public array(int size){
+        this.size = size;
+        data = new int [size];
+    }
+    
+    public void push (int newdata){
+    data[++top] = newdata;    
+    }
+    
+    public int pop(){
+        return data[top--];
+        //ambil data paling atas lalu dihapus data tersebut
+    }
+    
+    public int peek(){
+        return data[top];
+    }
+    
+    public boolean empty(){
+        return (top == -1);
+    }
+    
+    public int search(int search){
+        int result = -1;
+        for(int i=0; i<=top; i++){
+            if(data[i] == search){
+                result = top - i+1;
+                break;
+            }
+        }
+        
+        return result;
+    }
+    
+}
+
+public class stackArray {
+    public static void main(String[] args) {
+        array dataArray = new array(10);
+        
+        dataArray.push(10);
+        dataArray.push(20);
+        dataArray.push(30);
+        
+        //dataArray.pop();
+        
+        System.out.println(dataArray.search(10));
+    }
+}
