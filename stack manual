@@ -1,0 +1,52 @@
+import java.util.LinkedList;
+
+class data{
+    LinkedList<Integer> data = new LinkedList();
+    
+    public void push (int newdata){
+        data.addLast(newdata);
+    }
+    
+    public int pop (){
+        int result = data.getLast();
+        data.removeLast();
+        return result;
+    }
+    
+    public int peek(){
+        return data.getLast();
+    }
+    
+    public boolean empty(){
+        return data.isEmpty();
+    }
+    
+    public int search(int data){
+        int result = -1;
+        if(this.data.contains(data)){
+            result =  this.data.size() - this.data.indexOf(data);
+        }  
+        return result;
+    }
+    
+    public void show(){
+        System.out.println(data);
+    }
+}
+
+public class stackManual {
+    public static void main(String[] args) {
+        data x = new data();
+        x.push(10);
+        x.push(15);
+        x.push(20);
+        x.push(25);
+        x.push(30);
+        
+        //x.pop();
+        //x.peek();
+        //x.show();
+        //x.empty();
+        //x.search();
+    }
+}
